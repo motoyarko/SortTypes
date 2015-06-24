@@ -26,7 +26,5 @@ public class SortBuble implements ISorter {
             }
         }
         System.out.println("Bubble Completed");
-
-
     }
 }

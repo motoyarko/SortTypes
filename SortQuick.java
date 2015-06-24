@@ -10,7 +10,6 @@ public class SortQuick implements ISorter {
     @Override
     public void sort(List<String> inputList) {
         Collections.sort(inputList);
-
-       System.out.println("Quick Completed");
+        System.out.println("Quick Completed");
     }
 }

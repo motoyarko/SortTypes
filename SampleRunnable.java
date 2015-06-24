@@ -10,8 +10,6 @@ public class SampleRunnable implements Runnable{
         this.arrayList = arrayList;
     }
 
-
-
     @Override
     public void run() {
         SortBuble sort = new SortBuble();

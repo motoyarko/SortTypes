@@ -10,30 +10,15 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
-	// write your code here
+
         List<String> arrayList = prepareList();
-
-
-
-
-
-        /*SortBuble sort = new SortBuble();
-        sort.sort(arrayList);
-        SortQuick sort2 = new SortQuick();
-        sort2.sort(arrayList);*/
 
         Runnable threadBuble = new SampleRunnable(arrayList);
         new Thread(threadBuble).start();
 
         Runnable threadQuick = new SampleQuickRunnable(arrayList);
         new Thread(threadQuick).start();
-
-
-
-
     }
-
-
 
     private static List<String> prepareList() throws FileNotFoundException {
         String tempString;
@@ -45,7 +30,6 @@ public class Main {
         while (sc.hasNextLine()) {
             tempString = sc.nextLine();
             if ( tempString.equals("") || tempString == null  ){
-
             }else {
                 arrayList.add(tempString.replace(" ",""));  //add new string without " "
             }
