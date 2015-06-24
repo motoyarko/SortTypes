@@ -11,37 +11,38 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
 	// write your code here
-        String tempString;
-        File file = new File("tom1eng.txt");
-        FileInputStream fis = new FileInputStream(file);
-        Scanner sc = new Scanner(fis);
+        List<String> arrayList = prepareList();
 
 
-        //scanning test
-        /*while (sc.hasNextLine()) {
-            System.out.println(sc.nextLine());
-        }*/
-
-        List<String> arrayList= new ArrayList<String>();
-
-        while (sc.hasNextLine()) {
-            tempString = sc.nextLine();
-            if ( tempString.equals("") || tempString == null  ){
-
-            }else arrayList.add(tempString.replace(" ",""));  //add new string without " "
-        }
-
-        //test output
-        /*for (int i = 0; i < arrayList.size(); i++ ){
-           System.out.println(arrayList.get(i));
-           }*/
 
 
 
         SortBuble sort = new SortBuble();
         sort.sort(arrayList);
+        SortQuick sort2 = new SortQuick();
+        sort2.sort(arrayList);
 
 
 
+    }
+
+
+
+    private static List<String> prepareList() throws FileNotFoundException {
+        String tempString;
+        File file = new File("tom1eng.txt");
+        FileInputStream fis = new FileInputStream(file);
+        Scanner sc = new Scanner(fis);
+        List<String> arrayList= new ArrayList();
+
+        while (sc.hasNextLine()) {
+            tempString = sc.nextLine();
+            if ( tempString.equals("") || tempString == null  ){
+
+            }else {
+                arrayList.add(tempString.replace(" ",""));  //add new string without " "
+            }
+        }
+        return arrayList;
     }
 }
