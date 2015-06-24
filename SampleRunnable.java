@@ -4,15 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SampleRunnable implements Runnable{
+    public List<String> arrayList;
 
-    public SampleRunnable(){
-        super();
-
+    public SampleRunnable(List<String> arrayList){
+        this.arrayList = arrayList;
     }
+
+
 
     @Override
     public void run() {
-        System.out.println("sdfsdf");
         SortBuble sort = new SortBuble();
         sort.sort(arrayList);
     }

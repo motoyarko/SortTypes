@@ -17,10 +17,17 @@ public class Main {
 
 
 
-        SortBuble sort = new SortBuble();
+        /*SortBuble sort = new SortBuble();
         sort.sort(arrayList);
         SortQuick sort2 = new SortQuick();
-        sort2.sort(arrayList);
+        sort2.sort(arrayList);*/
+
+        Runnable threadBuble = new SampleRunnable(arrayList);
+        new Thread(threadBuble).start();
+
+        Runnable threadQuick = new SampleQuickRunnable(arrayList);
+        new Thread(threadQuick).start();
+
 
 
 
